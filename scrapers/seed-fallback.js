@@ -3,8 +3,6 @@
  * Dates are generated dynamically for the upcoming two weekends.
  * Run: node scrapers/seed-fallback.js
  */
-const { getDb } = require('../db/init');
-
 function getUpcomingWeekends() {
   const now = new Date();
   const day = now.getDay();
@@ -308,31 +306,6 @@ function getSeedEvents() {
       is_outdoor: 0
     },
   ];
-}
-
-// Run directly to seed the database
-if (require.main === module) {
-  const db = getDb();
-  const events = getSeedEvents();
-
-  const stmt = db.prepare(`
-    INSERT OR IGNORE INTO events
-    (title, description, event_date, event_time, end_time, location_name, address,
-     latitude, longitude, age_range, is_free, price, category, source_url, image_emoji, is_outdoor)
-    VALUES
-    (@title, @description, @event_date, @event_time, @end_time, @location_name, @address,
-     @latitude, @longitude, @age_range, @is_free, @price, @category, @source_url, @image_emoji, @is_outdoor)
-  `);
-
-  const insertMany = db.transaction((events) => {
-    for (const ev of events) {
-      stmt.run(ev);
-    }
-  });
-
-  insertMany(events);
-  console.log(`Seeded ${events.length} events for upcoming weekends.`);
-  db.close();
 }
 
 module.exports = { getSeedEvents };

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const { addSubscriber } = require('../db/init');
 
 router.post('/', (req, res) => {
-  const db = req.app.locals.db;
   const { email, name, age_preferences } = req.body;
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -10,10 +10,11 @@ router.post('/', (req, res) => {
   }
 
   try {
-    const stmt = db.prepare(
-      'INSERT INTO subscribers (email, name, age_preferences) VALUES (?, ?, ?) ON CONFLICT(email) DO UPDATE SET name = COALESCE(excluded.name, name), age_preferences = COALESCE(excluded.age_preferences, age_preferences)'
-    );
-    stmt.run(email.toLowerCase().trim(), name || null, age_preferences ? JSON.stringify(age_preferences) : null);
+    addSubscriber({
+      email: email.toLowerCase().trim(),
+      name: name || null,
+      age_preferences: age_preferences ? JSON.stringify(age_preferences) : null
+    });
     res.json({ success: true });
   } catch (err) {
     console.error('Subscribe error:', err);

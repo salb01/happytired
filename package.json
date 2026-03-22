@@ -5,14 +5,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "scrape": "node scrapers/index.js",
-    "seed": "node scrapers/seed-fallback.js"
+    "dev": "node server.js"
   },
   "keywords": ["kids", "events", "san-diego", "parenting"],
   "license": "MIT",
   "dependencies": {
-    "better-sqlite3": "^11.0.0",
-    "cheerio": "^1.0.0",
     "express": "^4.21.0"
   }
 }
