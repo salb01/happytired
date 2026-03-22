@@ -1,0 +1,16 @@
+{
+  "name": "HappyTired — Kids Events San Diego",
+  "short_name": "HappyTired",
+  "description": "Find age-perfect kids events happening this weekend in San Diego",
+  "start_url": "/events",
+  "display": "standalone",
+  "background_color": "#FFF8F0",
+  "theme_color": "#FF6B6B",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

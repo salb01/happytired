@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HappyTired — Kids Events This Weekend in San Diego</title>
+  <meta name="description" content="Find the best kids events this weekend in San Diego. Storytime, art, outdoor fun, and more for newborns to preschoolers.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:title" content="HappyTired — Kids Events This Weekend in San Diego">
+  <meta property="og:description" content="Weekend activities for San Diego families with little ones.">
+  <meta property="og:type" content="website">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFFBF5;
+      --text: #2D2A26;
+      --primary: #FF6B35;
+      --primary-light: #FFF0E8;
+      --secondary: #4ECDC4;
+      --secondary-light: #E8FAF8;
+      --accent: #FFD93D;
+      --card-bg: #FFFFFF;
+      --card-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      --card-hover-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      --radius: 16px;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --max-w: 900px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      text-align: center;
+      padding: 2.5rem 1rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+      border-bottom: 3px solid var(--accent);
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -0.5px;
+    }
+    header h1 span { color: var(--secondary); }
+    header p {
+      color: #666;
+      font-size: 1.05rem;
+      margin-top: 0.3rem;
+    }
+
+    /* ── Filters ── */
+    .filters {
+      max-width: var(--max-w);
+      margin: 1.5rem auto 0;
+      padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    .filter-btn {
+      border: 2px solid #ddd;
+      background: var(--card-bg);
+      padding: 0.45rem 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .filter-btn.weekend-btn.active {
+      background: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    /* ── Events Grid ── */
+    .events-container {
+      max-width: var(--max-w);
+      margin: 1.5rem auto 3rem;
+      padding: 0 1rem;
+    }
+    .events-grid {
+      display: grid;
+      gap: 1rem;
+    }
+    .event-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--card-shadow);
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .event-card:hover {
+      box-shadow: var(--card-hover-shadow);
+      transform: translateY(-2px);
+    }
+    .event-emoji {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary-light);
+      border-radius: 12px;
+    }
+    .event-info { flex: 1; min-width: 0; }
+    .event-info h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+    .event-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-size: 0.85rem;
+      color: #777;
+      margin-bottom: 0.35rem;
+    }
+    .event-meta span { white-space: nowrap; }
+    .badge {
+      display: inline-block;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-free { background: #d4edda; color: #155724; }
+    .badge-age { background: var(--secondary-light); color: #1a7a72; }
+    .badge-outdoor { background: #fff3cd; color: #856404; }
+
+    /* ── Empty / Loading ── */
+    .loading, .empty-state {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: #999;
+    }
+    .loading::after {
+      content: '';
+      display: block;
+      width: 36px;
+      height: 36px;
+      margin: 1rem auto 0;
+      border: 3px solid #eee;
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .empty-state h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--text); }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 100;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--card-bg);
+      border-radius: 20px 20px 0 0;
+      padding: 2rem 1.5rem 2.5rem;
+      max-width: 500px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      animation: slideUp 0.25s ease-out;
+    }
+    @keyframes slideUp { from { transform: translateY(100%); } }
+    .modal-close {
+      float: right;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #999;
+      line-height: 1;
+    }
+    .modal h2 { font-size: 1.25rem; margin-bottom: 0.5rem; padding-right: 2rem; }
+    .modal .detail-row {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+      font-size: 0.95rem;
+      color: #555;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .modal .detail-row strong { color: var(--text); min-width: 70px; }
+    .modal .description {
+      margin: 1rem 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #444;
+    }
+    .modal .actions {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-secondary { background: var(--secondary); color: #fff; }
+    .btn-outline { background: none; border: 2px solid #ddd; color: #555; }
+
+    /* ── Subscribe ── */
+    .subscribe-section {
+      max-width: var(--max-w);
+      margin: 0 auto 3rem;
+      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .subscribe-section h2 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .subscribe-section p { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+    .subscribe-form {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .subscribe-form input[type="email"] {
+      padding: 0.6rem 1rem;
+      border: 2px solid #ddd;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      width: 260px;
+      max-width: 100%;
+    }
+    .subscribe-form input:focus { outline: none; border-color: var(--primary); }
+    .subscribe-msg {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .subscribe-msg.success { color: #155724; }
+    .subscribe-msg.error { color: #721c24; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (min-width: 640px) {
+      header h1 { font-size: 2.5rem; }
+      .modal { border-radius: 20px; align-self: center; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Happy<span>Tired</span></h1>
+  <p>Kids events this weekend in San Diego</p>
+</header>
+
+<!-- Filters -->
+<div class="filters" id="filters">
+  <button class="filter-btn weekend-btn active" data-weekend="this">This Weekend</button>
+  <button class="filter-btn weekend-btn" data-weekend="next">Next Weekend</button>
+  <span style="width:8px"></span>
+  <button class="filter-btn age-btn" data-age="newborn">Newborn</button>
+  <button class="filter-btn age-btn" data-age="1-2">1–2 yrs</button>
+  <button class="filter-btn age-btn" data-age="3-5">3–5 yrs</button>
+  <span style="width:8px"></span>
+  <button class="filter-btn" id="freeFilter">Free Only</button>
+</div>
+
+<!-- Events -->
+<section class="events-container">
+  <div id="eventsGrid" class="events-grid">
+    <div class="loading">Loading events…</div>
+  </div>
+</section>
+
+<!-- Subscribe -->
+<section class="subscribe-section">
+  <h2>Get Weekend Events in Your Inbox</h2>
+  <p>We'll email you the best kid-friendly events every Thursday.</p>
+  <form class="subscribe-form" id="subscribeForm">
+    <input type="email" name="email" placeholder="your@email.com" required>
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+  </form>
+  <div class="subscribe-msg" id="subscribeMsg"></div>
+</section>
+
+<footer>
+  <p>Made with love for San Diego parents &middot; <a href="/submit">Submit an Event</a></p>
+</footer>
+
+<!-- Event Detail Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal" id="modalContent">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ── State ──
+  let activeWeekend = 'this';
+  let activeAges = new Set();
+  let freeOnly = false;
+  let events = [];
+
+  // ── Elements ──
+  const grid = document.getElementById('eventsGrid');
+  const modal = document.getElementById('modal');
+  const modalBody = document.getElementById('modalBody');
+  const modalClose = document.getElementById('modalClose');
+  const subscribeForm = document.getElementById('subscribeForm');
+  const subscribeMsg = document.getElementById('subscribeMsg');
+
+  // ── Filters ──
+  document.querySelectorAll('.weekend-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.weekend-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeWeekend = btn.dataset.weekend;
+      fetchEvents();
+    });
+  });
+
+  document.querySelectorAll('.age-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const age = btn.dataset.age;
+      btn.classList.toggle('active');
+      if (activeAges.has(age)) activeAges.delete(age);
+      else activeAges.add(age);
+      fetchEvents();
+    });
+  });
+
+  document.getElementById('freeFilter').addEventListener('click', function() {
+    freeOnly = !freeOnly;
+    this.classList.toggle('active');
+    fetchEvents();
+  });
+
+  // ── Fetch ──
+  async function fetchEvents() {
+    grid.innerHTML = '<div class="loading">Loading events…</div>';
+    const params = new URLSearchParams();
+    params.set('weekend', activeWeekend);
+    if (activeAges.size > 0) params.set('age_range', [...activeAges].join(','));
+    if (freeOnly) params.set('is_free', 'true');
+
+    try {
+      const res = await fetch('/api/events?' + params);
+      const data = await res.json();
+      events = data.events || [];
+      renderEvents();
+    } catch (err) {
+      grid.innerHTML = '<div class="empty-state"><h3>Oops!</h3><p>Could not load events. Please try again.</p></div>';
+    }
+  }
+
+  // ── Render ──
+  function renderEvents() {
+    if (events.length === 0) {
+      grid.innerHTML = '<div class="empty-state"><h3>No events found</h3><p>Try changing your filters or check next weekend!</p></div>';
+      return;
+    }
+    grid.innerHTML = events.map((ev, i) => `
+      <div class="event-card" data-idx="${i}">
+        <div class="event-emoji">${ev.image_emoji || '🎉'}</div>
+        <div class="event-info">
+          <h3>${esc(ev.title)}</h3>
+          <div class="event-meta">
+            <span>${formatDate(ev.event_date)}</span>
+            <span>${ev.event_time || ''}${ev.end_time ? ' – ' + ev.end_time : ''}</span>
+            <span>${esc(ev.location_name)}</span>
+          </div>
+          <div style="display:flex;gap:0.4rem;flex-wrap:wrap">
+            <span class="badge badge-age">${ageLabel(ev.age_range)}</span>
+            ${ev.is_free ? '<span class="badge badge-free">Free</span>' : (ev.price ? '<span class="badge" style="background:#f0f0f0;color:#555">$' + ev.price + '</span>' : '')}
+            ${ev.is_outdoor ? '<span class="badge badge-outdoor">Outdoor</span>' : ''}
+          </div>
+        </div>
+      </div>
+    `).join('');
+
+    grid.querySelectorAll('.event-card').forEach(card => {
+      card.addEventListener('click', () => openModal(events[+card.dataset.idx]));
+    });
+  }
+
+  // ── Modal ──
+  function openModal(ev) {
+    const calUrl = buildCalLink(ev);
+    const mapsUrl = ev.address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ev.address)}` : null;
+
+    modalBody.innerHTML = `
+      <h2>${ev.image_emoji || '🎉'} ${esc(ev.title)}</h2>
+      <div class="detail-row"><strong>Date</strong> ${formatDate(ev.event_date)}</div>
+      <div class="detail-row"><strong>Time</strong> ${ev.event_time || 'TBD'}${ev.end_time ? ' – ' + ev.end_time : ''}</div>
+      <div class="detail-row"><strong>Where</strong> ${esc(ev.location_name)}</div>
+      ${ev.address ? `<div class="detail-row"><strong>Address</strong> ${esc(ev.address)}</div>` : ''}
+      <div class="detail-row"><strong>Ages</strong> ${ageLabel(ev.age_range)}</div>
+      <div class="detail-row"><strong>Cost</strong> ${ev.is_free ? 'Free!' : (ev.price ? '$' + ev.price : 'See details')}</div>
+      ${ev.description ? `<p class="description">${esc(ev.description)}</p>` : ''}
+      <div class="actions">
+        <a href="${calUrl}" target="_blank" class="btn btn-primary">Add to Calendar</a>
+        ${mapsUrl ? `<a href="${mapsUrl}" target="_blank" class="btn btn-secondary">Directions</a>` : ''}
+        ${ev.source_url ? `<a href="${ev.source_url}" target="_blank" class="btn btn-outline">More Info</a>` : ''}
+      </div>
+    `;
+    modal.classList.add('open');
+  }
+
+  modalClose.addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+
+  // ── Subscribe ──
+  subscribeForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = subscribeForm.email.value.trim();
+    subscribeMsg.textContent = '';
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      const data = await res.json();
+      if (data.success) {
+        subscribeMsg.className = 'subscribe-msg success';
+        subscribeMsg.textContent = 'You\'re in! Check your inbox Thursdays.';
+        subscribeForm.reset();
+      } else {
+        subscribeMsg.className = 'subscribe-msg error';
+        subscribeMsg.textContent = data.message || 'Something went wrong.';
+      }
+    } catch {
+      subscribeMsg.className = 'subscribe-msg error';
+      subscribeMsg.textContent = 'Network error. Please try again.';
+    }
+  });
+
+  // ── Helpers ──
+  function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+  function ageLabel(r) { return r === 'newborn' ? 'Newborn' : r === '1-2' ? '1–2 yrs' : r === '3-5' ? '3–5 yrs' : r; }
+  function formatDate(iso) {
+    if (!iso) return '';
+    const d = new Date(iso + 'T12:00:00');
+    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+  }
+  function buildCalLink(ev) {
+    const title = encodeURIComponent(ev.title);
+    const details = encodeURIComponent(ev.description || '');
+    const location = encodeURIComponent(ev.address || ev.location_name || '');
+    const date = (ev.event_date || '').replace(/-/g, '');
+    const start = date + (ev.event_time ? 'T' + to24(ev.event_time).replace(':', '') + '00' : '');
+    const end = date + (ev.end_time ? 'T' + to24(ev.end_time).replace(':', '') + '00' : '');
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&details=${details}&location=${location}&dates=${start}/${end}`;
+  }
+  function to24(t) {
+    if (!t) return '1200';
+    const m = t.match(/(\d+):(\d+)\s*(AM|PM)/i);
+    if (!m) return '1200';
+    let h = parseInt(m[1]);
+    if (m[3].toUpperCase() === 'PM' && h < 12) h += 12;
+    if (m[3].toUpperCase() === 'AM' && h === 12) h = 0;
+    return String(h).padStart(2, '0') + ':' + m[2];
+  }
+
+  // ── Init ──
+  fetchEvents();
+})();
+</script>
+
+</body>
+</html>
