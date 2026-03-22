@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HappyTired — Weekend Plans for Tiny Humans | San Diego</title>
+  <meta name="description" content="Find age-perfect events for your 0-5 year old in San Diego. Filter by age, distance, and budget. No more scrolling through teen activities to find a toddler storytime.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <meta property="og:title" content="HappyTired — Weekend Plans for Tiny Humans">
+  <meta property="og:description" content="Find age-perfect events for your 0-5 year old in San Diego.">
+  <meta property="og:type" content="website">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400;1,9..40,700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FFF8F2;
+      --bg-alt: #FFF0E6;
+      --text: #2D2A26;
+      --text-light: #6B6560;
+      --primary: #F06B5B;
+      --primary-hover: #E05A4A;
+      --purple: #8B5CF6;
+      --pink: #EC4899;
+      --green: #4CAF7D;
+      --blue: #6B9FD6;
+      --yellow: #E5A820;
+      --card-bg: #FFFFFF;
+      --card-shadow: 0 1px 8px rgba(0,0,0,0.06);
+      --font: 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --max-w: 1140px;
+      --radius: 16px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .logo span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text-light);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-btn {
+      background: var(--text);
+      color: #fff !important;
+      padding: 0.55rem 1.25rem;
+      border-radius: 999px;
+      font-weight: 600 !important;
+      transition: opacity 0.15s;
+    }
+    .nav-btn:hover { opacity: 0.85; color: #fff; }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .hero-text h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-text h1 .gradient {
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+    }
+    .hero-text p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 2rem;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      border-radius: 999px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+      box-shadow: 0 4px 16px rgba(240,107,91,0.3);
+    }
+    .btn-cta:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ── Hero Preview Card ── */
+    .hero-preview {
+      display: flex;
+      justify-content: center;
+    }
+    .preview-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 1.75rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+      width: 360px;
+    }
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    .preview-header h3 { font-size: 1.1rem; font-weight: 700; }
+    .badge-sd {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .preview-event {
+      padding: 0.85rem 0;
+      border-top: 1px solid #f0ede8;
+    }
+    .preview-event:first-of-type { border-top: none; }
+    .preview-badges {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+    }
+    .pbadge {
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .pbadge-green { background: #dcfce7; color: #166534; }
+    .pbadge-yellow { background: #fef9c3; color: #854d0e; }
+    .pbadge-blue { background: #dbeafe; color: #1e40af; }
+    .pbadge-purple { background: #f3e8ff; color: #6b21a8; }
+    .preview-event h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.15rem; }
+    .preview-event p { font-size: 0.82rem; color: var(--text-light); }
+
+    /* ── Filter Pills ── */
+    .filter-strip {
+      background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+      padding: 2.5rem 1.5rem;
+    }
+    .filter-pills {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .pill {
+      border: 1.5px solid #e5ddd5;
+      background: var(--card-bg);
+      padding: 0.55rem 1.3rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-light);
+      cursor: default;
+      transition: all 0.15s;
+    }
+    .pill-pink { border-color: #fecdd3; color: #be123c; }
+    .pill-green { border-color: #bbf7d0; color: #166534; }
+    .pill-blue { border-color: #bfdbfe; color: #1e40af; }
+    .pill-yellow { border-color: #fde68a; color: #92400e; }
+    .pill-purple { border-color: #ddd6fe; color: #5b21b6; }
+    .pill-orange { border-color: #fed7aa; color: #9a3412; }
+
+    /* ── Features Section ── */
+    .features {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem 1.5rem;
+    }
+    .features-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .features-header h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+    }
+    .features-header p {
+      font-size: 1.05rem;
+      color: var(--text-light);
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+    .feature-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--card-shadow);
+    }
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .fi-peach { background: #fde8e0; }
+    .fi-blue { background: #dfe9f5; }
+    .fi-yellow { background: #fdf3da; }
+    .fi-green { background: #ddf5e7; }
+    .fi-purple { background: #ede5fa; }
+    .fi-gray { background: #eae8e5; }
+    .feature-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .feature-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+
+    /* ── Steps Section ── */
+    .steps {
+      background: var(--card-bg);
+      padding: 5rem 1.5rem;
+    }
+    .steps-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      text-align: center;
+    }
+    .steps-inner h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 3rem;
+    }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 auto 1rem;
+    }
+    .step-num-1 { background: var(--primary); }
+    .step-num-2 { background: var(--green); }
+    .step-num-3 { background: var(--blue); }
+    .step h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; max-width: 300px; margin: 0 auto; }
+
+    /* ── Mission Section ── */
+    .mission {
+      background: var(--bg-alt);
+      padding: 5rem 1.5rem;
+      text-align: center;
+    }
+    .mission-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .mission h2 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .mission h2 .grad-purple {
+      background: linear-gradient(135deg, #8B5CF6, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+    }
+    .mission h2 .grad-pink {
+      background: linear-gradient(135deg, #EC4899, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-style: italic;
+    }
+    .mission p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .btn-cta-lg {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2.5rem;
+      border-radius: 999px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(240,107,91,0.3);
+      transition: background 0.15s, transform 0.15s;
+    }
+    .btn-cta-lg:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      font-size: 0.85rem;
+      color: #aaa;
+      background: var(--bg);
+    }
+    footer a { color: var(--primary); text-decoration: none; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+      .hero-text h1 { font-size: 2.6rem; }
+      .hero-text p { margin-left: auto; margin-right: auto; }
+      .hero-preview { justify-content: center; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+      .steps-row { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 600px) {
+      .hero-text h1 { font-size: 2rem; }
+      .features-grid { grid-template-columns: 1fr; }
+      .preview-card { width: 100%; max-width: 360px; }
+      .mission h2 { font-size: 2rem; }
+      .features-header h2, .steps-inner h2 { font-size: 1.8rem; }
+      .nav-links a:not(.nav-btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a href="/" class="logo">Happy<span>Tired</span></a>
+  <div class="nav-links">
+    <a href="/submit">Submit Event</a>
+    <a href="/events" class="nav-btn">Browse Events &rarr;</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Weekend plans for <span class="gradient">tiny humans</span></h1>
+    <p>Find age-perfect events for your 0&ndash;5 year old in San Diego. Filter by age, distance, and budget. No more scrolling through teen activities to find a toddler storytime.</p>
+    <a href="/events" class="btn-cta">Browse This Weekend &rarr;</a>
+  </div>
+  <div class="hero-preview">
+    <div class="preview-card" id="previewCard">
+      <div class="preview-header">
+        <h3>This Weekend</h3>
+        <span class="badge-sd">San Diego</span>
+      </div>
+      <div id="previewEvents">
+        <div class="preview-event">
+          <div class="preview-badges">
+            <span class="pbadge pbadge-green">0-12mo</span>
+            <span class="pbadge pbadge-yellow">Free</span>
+          </div>
+          <h4>Baby Sensory Storytime</h4>
+          <p>Mission Valley Library &middot; 10:00 AM</p>
+        </div>
+        <div class="preview-event">
+          <div class="preview-badges">
+            <span class="pbadge pbadge-blue">1-2yr</span>
+          </div>
+          <h4>Toddler Music Together</h4>
+          <p>North Park &middot; 10:00 AM &middot; $24</p>
+        </div>
+        <div class="preview-event">
+          <div class="preview-badges">
+            <span class="pbadge pbadge-purple">3-5yr</span>
+            <span class="pbadge pbadge-yellow">Free</span>
+          </div>
+          <h4>Nature Explorers Walk</h4>
+          <p>Balboa Park &middot; 9:30 AM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filter Pills -->
+<div class="filter-strip">
+  <div class="filter-pills">
+    <span class="pill pill-pink">Newborn</span>
+    <span class="pill pill-green">Ages 1-2</span>
+    <span class="pill pill-blue">Ages 3-5</span>
+    <span class="pill pill-yellow">Free Events</span>
+    <span class="pill pill-purple">This Weekend</span>
+    <span class="pill pill-orange">Near Me</span>
+  </div>
+</div>
+
+<!-- Features -->
+<section class="features">
+  <div class="features-header">
+    <h2>Built for parents of littles</h2>
+    <p>Every feature designed around the 0&ndash;5 years</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon fi-peach">&#x1F476;</div>
+      <h3>Age-perfect filters</h3>
+      <p>Newborn, 1&ndash;2, or 3&ndash;5. See only events that actually fit your kid's stage. No more guessing.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-blue">&#x1F4CD;</div>
+      <h3>Distance search</h3>
+      <p>"Show me what's within 15 minutes." Because nap schedules wait for no one.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-yellow">&#x1F4B3;</div>
+      <h3>Free vs paid tags</h3>
+      <p>Instantly filter by budget. Know exactly what costs money before you click.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-green">&#x1F4C5;</div>
+      <h3>This Weekend picker</h3>
+      <p>Friday afternoon panic mode? One tap to see everything happening this weekend, sorted by age.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-purple">&#x2709;&#xFE0F;</div>
+      <h3>Weekly digest</h3>
+      <p>A curated email every week with the best events for YOUR kid's age, near YOUR zip code.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon fi-gray">&#x1F3AC;</div>
+      <h3>Business submissions</h3>
+      <p>Libraries, daycares, and studios submit their own events. The community keeps it fresh.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Steps -->
+<section class="steps">
+  <div class="steps-inner">
+    <h2>Three taps to your weekend</h2>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-num step-num-1">1</div>
+        <h3>Pick their age</h3>
+        <p>Select your child's age range to see events designed for their developmental stage.</p>
+      </div>
+      <div class="step">
+        <div class="step-num step-num-2">2</div>
+        <h3>Set your radius</h3>
+        <p>Choose how far you're willing to drive. We sort everything by distance from you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num step-num-3">3</div>
+        <h3>Go have fun</h3>
+        <p>Browse, bookmark, and head out. Come back happy. And tired.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission -->
+<section class="mission">
+  <div class="mission-inner">
+    <h2>Every weekend should feel like a <span class="grad-purple">good</span> <span class="grad-pink">weekend</span></h2>
+    <p>San Diego has hundreds of events for little kids every week. The hard part was never finding something to do. It was finding the right thing, at the right age, close enough to home. That's what HappyTired is for.</p>
+    <a href="/events" class="btn-cta-lg">See What's Happening This Weekend &rarr;</a>
+  </div>
+</section>
+
+<footer>
+  <p>Made with love for San Diego parents &middot; <a href="/submit">Submit an Event</a> &middot; <a href="mailto:happytired@polsia.app">Contact</a></p>
+</footer>
+
+<script>
+// Load real events into the hero preview card
+(async function() {
+  try {
+    const res = await fetch('/api/events?weekend=this');
+    const data = await res.json();
+    if (!data.success || !data.events || data.events.length < 3) return;
+
+    const pick = [];
+    const byAge = { newborn: [], '1-2': [], '3-5': [] };
+    data.events.forEach(e => { if (byAge[e.age_range]) byAge[e.age_range].push(e); });
+    for (const age of ['newborn', '1-2', '3-5']) {
+      if (byAge[age].length > 0) pick.push(byAge[age][0]);
+    }
+    if (pick.length < 3) return;
+
+    const ageLabel = { newborn: '0-12mo', '1-2': '1-2yr', '3-5': '3-5yr' };
+    const ageClass = { newborn: 'pbadge-green', '1-2': 'pbadge-blue', '3-5': 'pbadge-purple' };
+
+    document.getElementById('previewEvents').innerHTML = pick.map(ev => `
+      <div class="preview-event">
+        <div class="preview-badges">
+          <span class="pbadge ${ageClass[ev.age_range]}">${ageLabel[ev.age_range]}</span>
+          ${ev.is_free ? '<span class="pbadge pbadge-yellow">Free</span>' : ''}
+        </div>
+        <h4>${esc(ev.title)}</h4>
+        <p>${esc(ev.location_name)} &middot; ${ev.event_time || 'TBD'}${!ev.is_free && ev.price ? ' &middot; $' + ev.price : ''}</p>
+      </div>
+    `).join('');
+  } catch(e) {}
+
+  function esc(s) { const d = document.createElement('div'); d.textContent = s || ''; return d.innerHTML; }
+})();
+</script>
+
+</body>
+</html>

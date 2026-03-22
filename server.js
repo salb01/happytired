@@ -16,7 +16,7 @@ app.get('/events', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.redirect('/events');
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/submit', (req, res) => {
