@@ -1,0 +1,350 @@
+{
+  "metadata": {
+    "title": "San Diego Events for Children Ages 0-5",
+    "lastUpdated": "2026-03-22",
+    "region": "San Diego, CA"
+  },
+  "events": [
+    {
+      "name": "Underwater Egg Hunt at The Plunge",
+      "date": "2026-03-20",
+      "time": "5:30 PM - 8:00 PM",
+      "location": "The Plunge, Mission Beach",
+      "description": "Shallow end (2.5-3 ft, heated to 85°F) filled with floating and sunken eggs. Kids collect eggs by age group, turn them in for prizes, then enjoy the giant floating obstacle course.",
+      "ageRange": "0-5",
+      "cost": "$5 for kids 3 and under",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Steve Taylor Ventriloquist & Magic Show",
+      "date": "2026-03-21 to 2026-03-22",
+      "time": "Check venue for showtimes",
+      "location": "Marie Hitchcock Puppet Theater, Balboa Park",
+      "description": "Family-friendly comedy, ventriloquism, and magic show for ages 3 and up.",
+      "ageRange": "3-5",
+      "cost": "Check venue",
+      "category": "Performance / Show",
+      "source": "https://sandiego.kidsoutandabout.com/"
+    },
+    {
+      "name": "Free Community Egg Hunt - Robb Athletic Field",
+      "date": "2026-03-21",
+      "time": "Arrive 15-20 min early",
+      "location": "Robb Athletic Field, Ocean Beach",
+      "description": "Free community egg hunt. Eggs go fast — arrive early!",
+      "ageRange": "0-5",
+      "cost": "Free",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Free Community Egg Hunt - Pacific Beach Recreation Center",
+      "date": "2026-03-21",
+      "time": "Arrive 15-20 min early",
+      "location": "Pacific Beach Recreation Center",
+      "description": "Free community egg hunt with age-separated fields.",
+      "ageRange": "0-5",
+      "cost": "Free",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Frosted Faces Foundation Event at Children's Discovery Museum",
+      "date": "2026-03-27",
+      "time": "10:00 AM - 11:30 AM",
+      "location": "San Diego Children's Discovery Museum, Escondido",
+      "description": "Live presentation, meet & greet, storytime, and a special craft with Frosted Faces Foundation.",
+      "ageRange": "0-5",
+      "cost": "Museum admission",
+      "category": "Museum / Education",
+      "source": "https://visitcmod.org/"
+    },
+    {
+      "name": "Easter Eggspress at SD Model Railroad Museum",
+      "date": "2026-03-28 to 2026-03-29",
+      "time": "10:00 AM - 12:00 PM",
+      "location": "San Diego Model Railroad Museum, Balboa Park",
+      "description": "Easter eggs and model trains in Balboa Park. Pair it with other park activities the same morning.",
+      "ageRange": "0-5",
+      "cost": "Check venue",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Spring Egg Hunt at Mountain View Community Center",
+      "date": "2026-03-28",
+      "time": "10:00 AM - 12:30 PM",
+      "location": "Mountain View Community Center, Logan Heights",
+      "description": "Spring egg hunt with activities for young children.",
+      "ageRange": "0-5",
+      "cost": "Free",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Free Community Egg Hunt - Santee Town Center",
+      "date": "2026-03-28",
+      "time": "Arrive 15-20 min early",
+      "location": "Santee Town Center",
+      "description": "Free community egg hunt. Arrive early as eggs go fast.",
+      "ageRange": "0-5",
+      "cost": "Free",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Easter Train at Pacific Southwest Railway Museum",
+      "date": "2026-03-28 to 2026-03-29, 2026-04-04 to 2026-04-05",
+      "time": "Departures at 10:30 AM, 1:00 PM, 2:30 PM",
+      "location": "Pacific Southwest Railway Museum, Campo",
+      "description": "45-minute train ride through backcountry in restored 1920s rail cars decorated for Easter, plus egg hunt and Easter Bunny photos at the station.",
+      "ageRange": "0-5",
+      "cost": "Check venue",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "SeaWorld Easter Celebration",
+      "date": "2026-03-22 to 2026-04-20",
+      "time": "Park hours",
+      "location": "SeaWorld San Diego",
+      "description": "Rides, stage shows, Sesame Street Party Parade, Easter Bunny photos, egg scavenger hunt, and Furry Friends Bunny Hop Dance Party.",
+      "ageRange": "0-5",
+      "cost": "Park admission (FREE Preschool Fun Card for ages 3-5, first 10,000)",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Easter Egg Hunt at Hotel del Coronado",
+      "date": "2026-04-05",
+      "time": "Check venue",
+      "location": "Hotel del Coronado, Coronado",
+      "description": "Easter brunch, beach egg hunts, Garden Fair, Easter Bunny photos, petting zoo, pony rides, face painting, and balloon art.",
+      "ageRange": "0-5",
+      "cost": "Check venue",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Free Community Egg Hunt - Encinitas Community Park",
+      "date": "2026-04-04",
+      "time": "Arrive 15-20 min early",
+      "location": "Encinitas Community Park",
+      "description": "Free community egg hunt.",
+      "ageRange": "0-5",
+      "cost": "Free",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Free Community Egg Hunt - Poinsettia Community Park",
+      "date": "2026-04-04",
+      "time": "Arrive 15-20 min early",
+      "location": "Poinsettia Community Park, Carlsbad",
+      "description": "Free community egg hunt.",
+      "ageRange": "0-5",
+      "cost": "Free",
+      "category": "Easter / Holiday",
+      "source": "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    },
+    {
+      "name": "Makers Arcade Spring Fair",
+      "date": "2026-04-04 to 2026-04-05",
+      "time": "10:00 AM - 5:00 PM",
+      "location": "Balboa Park",
+      "description": "Vibrant open-air handmade festival with local artisans. Family-friendly atmosphere.",
+      "ageRange": "0-5",
+      "cost": "Free admission",
+      "category": "Festival / Fair",
+      "source": "https://sandiego.kidsoutandabout.com/"
+    },
+    {
+      "name": "SAPLINGS Program at San Diego Botanic Garden",
+      "date": "Ongoing (Wed-Fri)",
+      "time": "10:00 AM - 12:00 PM",
+      "location": "Hamilton Children's Garden, San Diego Botanic Garden, Encinitas",
+      "description": "Drop-in family program supporting early childhood connections to nature through play and seasonal activities. Spring/Summer theme: 'Birds, bees, and butterflies.' Caregivers stay and play with children.",
+      "ageRange": "0-5",
+      "cost": "Garden admission",
+      "category": "Nature / Outdoor",
+      "source": "https://sdbg.org/childrens-activities/"
+    },
+    {
+      "name": "Grandma Kathy's Tales & Tunes",
+      "date": "Ongoing (Fridays)",
+      "time": "10:30 AM - 11:00 AM",
+      "location": "San Diego Botanic Garden, Encinitas",
+      "description": "Puppet show and singalong every Friday at the Botanic Garden.",
+      "ageRange": "0-5",
+      "cost": "Garden admission",
+      "category": "Performance / Show",
+      "source": "https://sdbg.org/childrens-activities/"
+    },
+    {
+      "name": "Food Waste Fridays at San Diego Botanic Garden",
+      "date": "2026-03-06 to 2026-04-24 (Fridays)",
+      "time": "Check venue",
+      "location": "San Diego Botanic Garden, Encinitas",
+      "description": "Weekly Learning Labs with hands-on lessons in partnership with Solana Center for Environmental Innovation.",
+      "ageRange": "0-5",
+      "cost": "Garden admission",
+      "category": "Nature / Education",
+      "source": "https://sdbg.org/childrens-activities/"
+    },
+    {
+      "name": "San Diego County Library - Baby Storytime & Playtime",
+      "date": "Ongoing (weekly)",
+      "time": "Check branch schedule",
+      "location": "Various San Diego County Library branches",
+      "description": "Storytime followed by playtime with shakers, sensory balls, and blocks for ages 0-18 months.",
+      "ageRange": "0-1",
+      "cost": "Free",
+      "category": "Library / Storytime",
+      "source": "https://sdcl.bibliocommons.com/v2/events"
+    },
+    {
+      "name": "San Diego County Library - Toddler Storytime",
+      "date": "Ongoing (weekly)",
+      "time": "Check branch schedule",
+      "location": "Various San Diego County Library branches",
+      "description": "Lively songs, movements, and captivating picture books, with hands-on learning and crafting afterward.",
+      "ageRange": "1-3",
+      "cost": "Free",
+      "category": "Library / Storytime",
+      "source": "https://sdcl.bibliocommons.com/v2/events"
+    },
+    {
+      "name": "San Diego County Library - Bilingual Preschool Storytime",
+      "date": "Ongoing (weekly)",
+      "time": "Check branch schedule",
+      "location": "Various San Diego County Library branches",
+      "description": "Stories and songs in English and Spanish for preschool-aged children.",
+      "ageRange": "3-5",
+      "cost": "Free",
+      "category": "Library / Storytime",
+      "source": "https://sdcl.bibliocommons.com/v2/events"
+    },
+    {
+      "name": "San Diego County Library - Wednesday Storytimes",
+      "date": "Ongoing (Wednesdays)",
+      "time": "Check branch schedule",
+      "location": "Various San Diego County Library branches",
+      "description": "Sing, dance, and hear stories geared toward children ages 0-5.",
+      "ageRange": "0-5",
+      "cost": "Free",
+      "category": "Library / Storytime",
+      "source": "https://sdcl.bibliocommons.com/v2/events"
+    },
+    {
+      "name": "Storytime with Seadragons at Birch Aquarium",
+      "date": "Ongoing (recurring)",
+      "time": "Check venue",
+      "location": "Birch Aquarium, La Jolla",
+      "description": "Interactive storytime experience at the aquarium, perfect for young ocean enthusiasts. Aquarium also features hands-on exhibits and Little Blue Penguins.",
+      "ageRange": "0-5",
+      "cost": "Aquarium admission",
+      "category": "Museum / Education",
+      "source": "https://lajollamom.com/best-things-to-do-in-san-diego-with-kids/"
+    },
+    {
+      "name": "Toddler Time at The New Children's Museum",
+      "date": "Ongoing",
+      "time": "Check venue",
+      "location": "The New Children's Museum, Downtown San Diego",
+      "description": "Structured play and early learning opportunities with hands-on art workshops and interactive installations. Museums for All: $3 admission available.",
+      "ageRange": "0-5",
+      "cost": "Museum admission ($3 via Museums for All)",
+      "category": "Museum / Education",
+      "source": "https://thinkplaycreate.org/"
+    },
+    {
+      "name": "Backyard Play Space at SD Natural History Museum",
+      "date": "Ongoing",
+      "time": "Museum hours",
+      "location": "San Diego Natural History Museum, Balboa Park",
+      "description": "Dedicated play space designed for children ages 0-5 with interactive nature-themed exhibits.",
+      "ageRange": "0-5",
+      "cost": "Museum admission (Free Tuesdays for residents)",
+      "category": "Museum / Education",
+      "source": "https://lajollamom.com/the-best-museums-in-san-diego-for-kids/"
+    },
+    {
+      "name": "Storytime at San Diego Museum of Art Library",
+      "date": "Ongoing",
+      "time": "Check venue",
+      "location": "San Diego Museum of Art, Balboa Park",
+      "description": "Lively storytelling and readings of art-inspired children's books. Each storytime features a theme inspired by the SDMA collection.",
+      "ageRange": "0-5",
+      "cost": "Check venue",
+      "category": "Library / Storytime",
+      "source": "https://www.sdmart.org/families/"
+    },
+    {
+      "name": "Little Mess Club - Creative Play for Toddlers",
+      "date": "Various dates",
+      "time": "Check Eventbrite",
+      "location": "San Diego (various locations)",
+      "description": "Creative sensory play sessions designed for toddlers.",
+      "ageRange": "1-3",
+      "cost": "Check Eventbrite",
+      "category": "Play / Activities",
+      "source": "https://www.eventbrite.com/d/ca--san-diego/children-activities/"
+    },
+    {
+      "name": "Trail Tykes: A Program for Little Explorers",
+      "date": "Various dates",
+      "time": "Check Eventbrite",
+      "location": "San Diego (various locations)",
+      "description": "Outdoor exploration program designed for toddlers and young children.",
+      "ageRange": "1-5",
+      "cost": "Check Eventbrite",
+      "category": "Nature / Outdoor",
+      "source": "https://www.eventbrite.com/d/ca--san-diego/free-kids/"
+    },
+    {
+      "name": "Early Start Together: Parent-to-Parent Playdates",
+      "date": "Various dates",
+      "time": "Check Eventbrite",
+      "location": "San Diego (various locations)",
+      "description": "Structured playdates connecting parents and their young children for socialization.",
+      "ageRange": "0-3",
+      "cost": "Free",
+      "category": "Play / Activities",
+      "source": "https://www.eventbrite.com/d/ca--san-diego/free-kids/"
+    },
+    {
+      "name": "Sunday Art Club: A Monthly Family Art Morning",
+      "date": "Monthly (Sundays)",
+      "time": "Check Eventbrite",
+      "location": "San Diego (various locations)",
+      "description": "Monthly family art morning for ages 1-10. Creative activities suitable for toddlers through older kids.",
+      "ageRange": "1-5",
+      "cost": "Check Eventbrite",
+      "category": "Arts / Crafts",
+      "source": "https://www.eventbrite.com/d/ca--san-diego/children-activities/"
+    },
+    {
+      "name": "Tide Pooling at Cabrillo National Monument",
+      "date": "Ongoing (best through March during low tides)",
+      "time": "Check tide schedule",
+      "location": "Cabrillo National Monument, Point Loma",
+      "description": "Low tides reveal marine life like sea stars, anemones, and hermit crabs. Best for young explorers during winter-spring months.",
+      "ageRange": "0-5",
+      "cost": "$20 per vehicle",
+      "category": "Nature / Outdoor",
+      "source": "https://lajollamom.com/best-things-to-do-in-san-diego-with-kids/"
+    },
+    {
+      "name": "San Diego Children's Discovery Museum - Spring Camp",
+      "date": "Spring 2026 (check dates)",
+      "time": "Check venue",
+      "location": "San Diego Children's Discovery Museum, Escondido",
+      "description": "Spring camp for creative and curious problem solvers to spend spring break exploring with the museum. Programs include song, music, movement, storytime, sensory exploration, and hands-on crafts.",
+      "ageRange": "0-5",
+      "cost": "Check venue",
+      "category": "Museum / Camp",
+      "source": "https://visitcmod.org/"
+    }
+  ]
+}
