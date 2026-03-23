@@ -1,0 +1,60 @@
+name: Update Events Daily
+
+on:
+  schedule:
+    - cron: '0 15 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-events:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: 📦 Install dependencies
+        run: npm install
+      
+      - name: 🔍 Run event update script
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npm run update-events
+      
+      - name: ✅ Validate updated events
+        run: npm run validate
+      
+      - name: 📝 Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet events.json; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in events.json"
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in events.json"
+          fi
+      
+      - name: 🚀 Commit and push changes
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add events.json
+          git commit -m "🤖 Auto-update events - $(date '+%Y-%m-%d %H:%M PT')"
+          git push
+      
+      - name: ✅ Success notification
+        if: steps.check_changes.outputs.has_changes == 'true'
+        run: |
+          echo "✅ Events updated and pushed successfully!"
+          echo "🚀 Vercel will auto-deploy the changes"
+      
+      - name: ℹ️ No changes
+        if: steps.check_changes.outputs.has_changes == 'false'
+        run: echo "ℹ️ No new changes to events - site is already up to date"
