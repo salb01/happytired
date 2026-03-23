@@ -101,9 +101,25 @@ Return ONLY a valid JSON array with no preamble or markdown.`;
       }
     }
 
-    // Clean up the response (remove markdown formatting if present)
+    // Clean up the response - find the JSON array
     jsonText = jsonText.trim();
+    
+    // Remove markdown code fences if present
     jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+    
+    // Try to extract JSON array if Claude added preamble text
+    const arrayMatch = jsonText.match(/\[\s*\{[\s\S]*\}\s*\]/);
+    if (arrayMatch) {
+      jsonText = arrayMatch[0];
+    }
+    
+    // If still no valid JSON, try to find it after any preamble
+    if (!jsonText.startsWith('[')) {
+      const jsonStart = jsonText.indexOf('[');
+      if (jsonStart !== -1) {
+        jsonText = jsonText.substring(jsonStart);
+      }
+    }
 
     const events = JSON.parse(jsonText);
     
