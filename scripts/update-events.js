@@ -16,7 +16,7 @@ const CONFIG = {
   location: 'San Diego',
   ageRange: '0-5',
   lookAheadDays: 60, // Look 60 days ahead
-  maxEvents: 35,
+  maxEvents: 25,
   verificationSources: 2, // Verify each event with at least 2 sources
 };
 
@@ -27,58 +27,35 @@ async function findAndVerifyEvents() {
   const endDate = new Date(today);
   endDate.setDate(today.getDate() + CONFIG.lookAheadDays);
   
-  const prompt = `You are a San Diego kids event researcher. Find ${CONFIG.maxEvents} upcoming events for children ages ${CONFIG.ageRange} in ${CONFIG.location}.
+  const prompt = `Find ${CONFIG.maxEvents} San Diego kids events (ages ${CONFIG.ageRange}) from ${today.toLocaleDateString()} to ${endDate.toLocaleDateString()}.
 
-Date range: ${today.toLocaleDateString()} to ${endDate.toLocaleDateString()}
+Categories: Easter/Holiday, Library/Storytime, Museum/Education, Nature/Outdoor, Performance/Show, Arts/Crafts, Play/Activities
 
-CRITICAL VERIFICATION REQUIREMENTS:
-1. For EACH event, search at least ${CONFIG.verificationSources} different sources
-2. Cross-verify: venue name, exact dates, times, cost, location/address
-3. If sources conflict, flag the event with "verification_status": "CONFLICT" and list conflicts
-4. If you can only find 1 source, mark "verification_status": "SINGLE_SOURCE"
-5. If 2+ sources agree, mark "verification_status": "VERIFIED"
+Search event sites: San Diego Moms, Kids Out and About SD, Eventbrite, library/museum/park websites.
 
-Event categories to find:
-- Easter/Holiday events (egg hunts, holiday celebrations)
-- Library storytimes and programs
-- Museum programs and activities
-- Nature/outdoor activities (gardens, parks, hiking)
-- Performances (puppet shows, children's theater, music)
-- Arts, crafts, and maker activities
-- Play activities and social events
-- Educational programs
-
-For each event, return JSON with this EXACT structure:
+Return ONLY a JSON array (no text before/after). For each event:
 {
   "name": "Event Name",
   "category": "Easter/Holiday|Library/Storytime|Museum/Education|Nature/Outdoor|Performance/Show|Arts/Crafts|Play/Activities",
-  "date": "YYYY-MM-DD" or "YYYY-MM-DD to YYYY-MM-DD" for multi-day,
+  "date": "YYYY-MM-DD" or "YYYY-MM-DD to YYYY-MM-DD",
   "time": "HH:MM AM/PM" or "HH:MM AM/PM - HH:MM AM/PM" or "Various times",
   "location": "Venue Name, City",
   "address": "Full street address",
   "ageRange": "Ages X-Y" or "All ages",
-  "cost": "Free" or "$X" or "$X-$Y" or "Free with admission",
-  "description": "Brief description (2-3 sentences max)",
-  "sourceUrl": "URL of primary source (official event page preferred)",
-  "verificationSources": ["source1.com", "source2.com"],
-  "verification_status": "VERIFIED|SINGLE_SOURCE|CONFLICT",
-  "conflicts": "Description of any conflicts found between sources (if applicable)"
+  "cost": "Free" or "$X" or "$X-$Y",
+  "description": "Brief 1-2 sentence description",
+  "sourceUrl": "URL",
+  "verificationSources": ["url1", "url2"],
+  "verification_status": "VERIFIED" if 2+ sources agree, "SINGLE_SOURCE" if only 1 source, "CONFLICT" if sources disagree,
+  "conflicts": "conflict description if any"
 }
 
-IMPORTANT:
-- Use web_search extensively - search for each event category separately
-- Prioritize official venue websites (museums, libraries, parks)
-- Check multiple event calendars (San Diego Moms, Kids Out and About SD, Eventbrite, venue sites)
-- DO NOT make up events - only include events you can verify with real sources
-- If you find a conflict (wrong venue, wrong date), flag it clearly
-- Sort by date (earliest first)
-
-Return ONLY a valid JSON array with no preamble or markdown.`;
+Verify each event with 2+ sources when possible. Flag conflicts. Sort by date.`;
 
   try {
     const message = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
-      max_tokens: 16000,
+      max_tokens: 8000,
       tools: [
         {
           type: 'web_search_20250305',
