@@ -1,0 +1,14 @@
+{
+  "name": "happytired-event-automation",
+  "version": "1.0.0",
+  "description": "Automated San Diego kids events finder and validator",
+  "type": "module",
+  "scripts": {
+    "update-events": "node scripts/update-events.js",
+    "validate": "node scripts/validate-events.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.30.0",
+    "dotenv": "^16.4.5"
+  }
+}
