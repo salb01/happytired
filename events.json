@@ -1,0 +1,423 @@
+[
+  {
+    "name": "Spring Egg Hunt – Golden Hill Rec Center",
+    "category": "Easter/Holiday",
+    "date": "2026-03-28",
+    "time": "11:00 AM - 1:00 PM",
+    "location": "Golden Hill Recreation Center, San Diego",
+    "address": "2600 Golf Course Dr, San Diego, CA 92102",
+    "ageRange": "Ages 0-12",
+    "cost": "Free",
+    "description": "Free City of San Diego community egg hunt with games, crafts, and spring festivities for kids of all ages.",
+    "sourceUrl": "https://www.sandiego.gov/events/calendar",
+    "verificationSources": [
+      "https://www.sandiego.gov/events/calendar",
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Baby & Toddler Storytime – San Diego County Library",
+    "category": "Library/Storytime",
+    "date": "2026-03-25",
+    "time": "10:30 AM - 11:00 AM",
+    "location": "San Diego County Library, Various Branches",
+    "address": "Multiple locations across San Diego County",
+    "ageRange": "Ages 0-3",
+    "cost": "Free",
+    "description": "Weekly storytime sessions with songs, fingerplays, books, and playtime for babies and toddlers. Stay-n-play time follows at select branches.",
+    "sourceUrl": "https://sdcl.bibliocommons.com/v2/events",
+    "verificationSources": [
+      "https://sdcl.bibliocommons.com/v2/events",
+      "https://sandiego.librarymarket.com/event/baby-toddler-storytime-7"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Steve Taylor Magic & Ventriloquist Show",
+    "category": "Performance/Show",
+    "date": "2026-03-28 to 2026-03-29",
+    "time": "Various times",
+    "location": "Marie Hitchcock Puppet Theater, Balboa Park",
+    "address": "2130 Pan American Rd W, San Diego, CA 92101",
+    "ageRange": "Ages 3+",
+    "cost": "$5-$8",
+    "description": "Family-friendly comedy, magic, and ventriloquist show at the historic Balboa Park Puppet Theater. Fun for audience members aged 3 to 103.",
+    "sourceUrl": "https://www.sandiegoreader.com/events/for-kids/",
+    "verificationSources": [
+      "https://www.sandiegoreader.com/events/for-kids/",
+      "https://sandiego.kidsoutandabout.com/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Easter on the Farm – Bates Nut Farm",
+    "category": "Easter/Holiday",
+    "date": "2026-03-28",
+    "time": "9:30 AM - 2:30 PM",
+    "location": "Bates Nut Farm, Valley Center",
+    "address": "15954 Woods Valley Rd, Valley Center, CA 92082",
+    "ageRange": "All ages",
+    "cost": "$10-$20",
+    "description": "One of San Diego's largest Easter egg hunts with farm animals, pony rides, bounce houses, crafts, and plenty of eggs to find on the farm.",
+    "sourceUrl": "https://sandiegomoms.com/2026/03/san-diego-easter-events/",
+    "verificationSources": [
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/",
+      "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Easter Eggspress – SD Model Railroad Museum",
+    "category": "Easter/Holiday",
+    "date": "2026-03-28 to 2026-03-29",
+    "time": "10:00 AM - 12:00 PM",
+    "location": "San Diego Model Railroad Museum, Balboa Park",
+    "address": "1649 El Prado, San Diego, CA 92101",
+    "ageRange": "All ages",
+    "cost": "$5-$15",
+    "description": "Kids complete scavenger hunt tasks throughout the museum and receive Easter eggs. Crafts and model train exhibits included.",
+    "sourceUrl": "https://www.sdmrm.org/easter",
+    "verificationSources": [
+      "https://www.sdmrm.org/easter",
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Spring Egg Hunt – Mountain View Community Center",
+    "category": "Easter/Holiday",
+    "date": "2026-03-28",
+    "time": "10:00 AM - 12:30 PM",
+    "location": "Mountain View Community Center, Logan Heights",
+    "address": "641 S Boundary St, San Diego, CA 92113",
+    "ageRange": "Ages 0-12",
+    "cost": "Free",
+    "description": "Free community spring egg hunt with face painting, arts and crafts, games, and spring activities for the whole family.",
+    "sourceUrl": "https://www.sandiego.gov/events/calendar",
+    "verificationSources": [
+      "https://www.sandiego.gov/events/calendar",
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "East Village Block Party",
+    "category": "Play/Activities",
+    "date": "2026-03-28",
+    "time": "10:00 AM - 4:30 PM",
+    "location": "East Village, Downtown San Diego",
+    "address": "East Village, San Diego, CA 92101",
+    "ageRange": "All ages",
+    "cost": "Free",
+    "description": "Celebrating Padres baseball with food, music, family-friendly activities, and vendors in the East Village neighborhood.",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2025/12/30/a-bucket-list-of-70-free-things-to-do-in-san-diego-county-in-2026/",
+    "verificationSources": [
+      "https://www.sandiegouniontribune.com/2025/12/30/a-bucket-list-of-70-free-things-to-do-in-san-diego-county-in-2026/"
+    ],
+    "verification_status": "SINGLE_SOURCE"
+  },
+  {
+    "name": "The Flower Fields at Carlsbad Ranch",
+    "category": "Nature/Outdoor",
+    "date": "2026-03-01 to 2026-05-10",
+    "time": "9:00 AM - 6:00 PM",
+    "location": "The Flower Fields, Carlsbad",
+    "address": "5704 Paseo Del Norte, Carlsbad, CA 92008",
+    "ageRange": "All ages",
+    "cost": "$14-$22",
+    "description": "Stunning ranunculus flower fields with kid-friendly activities including a sweet pea maze, wagon rides, mining for gems, and playgrounds.",
+    "sourceUrl": "https://lajollamom.com/best-things-to-do-in-san-diego-with-kids/",
+    "verificationSources": [
+      "https://lajollamom.com/best-things-to-do-in-san-diego-with-kids/",
+      "https://www.sandiego.com/blog/post/san-diego-with-kids-fun-things-to-do-in-2026/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Food Waste Fridays – SD Botanic Garden",
+    "category": "Nature/Outdoor",
+    "date": "2026-03-06 to 2026-04-24",
+    "time": "9:30 AM - 12:00 PM",
+    "location": "San Diego Botanic Garden, Encinitas",
+    "address": "230 Quail Gardens Dr, Encinitas, CA 92024",
+    "ageRange": "Ages 2-5",
+    "cost": "Free with admission ($10-$18)",
+    "description": "Hands-on program focusing on composting and decomposers. Kids explore the garden and learn about reducing food waste through interactive stations.",
+    "sourceUrl": "https://sdbg.org/childrens-activities/",
+    "verificationSources": [
+      "https://sdbg.org/childrens-activities/"
+    ],
+    "verification_status": "SINGLE_SOURCE"
+  },
+  {
+    "name": "Grandma Kathy's Tales & Tunes – SD Botanic Garden",
+    "category": "Performance/Show",
+    "date": "2026-03-27",
+    "time": "10:30 AM - 11:00 AM",
+    "location": "San Diego Botanic Garden, Encinitas",
+    "address": "230 Quail Gardens Dr, Encinitas, CA 92024",
+    "ageRange": "Ages 0-5",
+    "cost": "Free with admission ($10-$18)",
+    "description": "Weekly puppet show and singalong every Friday in the children's garden area. A beloved tradition at the Botanic Garden.",
+    "sourceUrl": "https://sdbg.org/childrens-activities/",
+    "verificationSources": [
+      "https://sdbg.org/childrens-activities/",
+      "https://lajollamom.com/best-things-to-do-in-san-diego-with-kids/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Sesame Place San Diego – Easter Celebration",
+    "category": "Easter/Holiday",
+    "date": "2026-03-22 to 2026-04-20",
+    "time": "10:00 AM - 5:00 PM",
+    "location": "Sesame Place San Diego, Chula Vista",
+    "address": "2052 Entertainment Cir, Chula Vista, CA 91911",
+    "ageRange": "Ages 0-5",
+    "cost": "$50-$90",
+    "description": "Easter celebration at the theme park with rides, Sesame Street Party Parade, Easter Bunny photos, egg scavenger hunt, and Furry Friends Bunny Hop Dance Party.",
+    "sourceUrl": "https://sandiegomoms.com/2026/03/san-diego-easter-events/",
+    "verificationSources": [
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/",
+      "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Alpine Acres Sanctuary Easter Egg Hunt",
+    "category": "Easter/Holiday",
+    "date": "2026-04-03 to 2026-04-05",
+    "time": "11:00 AM - 3:00 PM",
+    "location": "Alpine Acres Sanctuary, Julian",
+    "address": "Near Julian, CA 92036",
+    "ageRange": "All ages",
+    "cost": "$12",
+    "description": "7,000+ eggs hidden across 20 acres of real farmland near Julian with 200+ rescue animals. Easter Bunny photos available. Nonprofit sanctuary event.",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/",
+    "verificationSources": [
+      "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/",
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Encinitas Spring Egg Hunt",
+    "category": "Easter/Holiday",
+    "date": "2026-04-04",
+    "time": "10:00 AM - 12:00 PM",
+    "location": "Encinitas Community Park, Encinitas",
+    "address": "425 Santa Fe Dr, Encinitas, CA 92024",
+    "ageRange": "Ages 0-12",
+    "cost": "Free",
+    "description": "Cherished Encinitas tradition for over 20 years. Egg hunts at 10:15, 11:00, and 11:45 with ages 4 & under on upper field and 5+ on lower field.",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/",
+    "verificationSources": [
+      "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/",
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Makers Arcade Spring Fair – Balboa Park",
+    "category": "Arts/Crafts",
+    "date": "2026-04-04 to 2026-04-05",
+    "time": "10:00 AM - 5:00 PM",
+    "location": "Balboa Park, San Diego",
+    "address": "1549 El Prado, San Diego, CA 92101",
+    "ageRange": "All ages",
+    "cost": "Free",
+    "description": "Spring craft fair debut in Balboa Park featuring local artisans, handmade goods, kids activities, and family-friendly entertainment.",
+    "sourceUrl": "https://sandiego.kidsoutandabout.com/",
+    "verificationSources": [
+      "https://sandiego.kidsoutandabout.com/",
+      "https://www.sandiegoreader.com/events/for-kids/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Santee Lakes Easter Egg Hunt",
+    "category": "Easter/Holiday",
+    "date": "2026-04-04",
+    "time": "10:00 AM - 2:00 PM",
+    "location": "Santee Lakes Recreation Preserve, Santee",
+    "address": "9310 Fanita Pkwy, Santee, CA 92071",
+    "ageRange": "Ages 0-12",
+    "cost": "Free admission",
+    "description": "East County's biggest Easter event with 10,000+ eggs, age-specific scrambles, pony rides, petting zoo, face painting, inflatables, and food trucks.",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/",
+    "verificationSources": [
+      "https://www.sandiegouniontribune.com/2026/03/13/san-diego-county-is-hopping-with-easter-egg-hunts-many-are-free/",
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Encanto Recreation Center Spring Egg Hunt",
+    "category": "Easter/Holiday",
+    "date": "2026-04-05",
+    "time": "10:00 AM - 1:00 PM",
+    "location": "Encanto Recreation Center, San Diego",
+    "address": "6364 Akins Ave, San Diego, CA 92114",
+    "ageRange": "Ages 0-12",
+    "cost": "Free",
+    "description": "Free City of San Diego community egg hunt on Easter Sunday with activities, crafts, and fun for the whole family.",
+    "sourceUrl": "https://www.sandiego.gov/events/calendar",
+    "verificationSources": [
+      "https://www.sandiego.gov/events/calendar",
+      "https://sandiegomoms.com/2026/03/san-diego-easter-events/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "San Diego Zoo – Wild Weekend: Amazonia",
+    "category": "Nature/Outdoor",
+    "date": "2026-04-18 to 2026-04-19",
+    "time": "9:00 AM - 5:00 PM",
+    "location": "San Diego Zoo, Balboa Park",
+    "address": "2920 Zoo Dr, San Diego, CA 92101",
+    "ageRange": "All ages",
+    "cost": "Free with zoo admission ($62-$72)",
+    "description": "Discover the vibrant wildlife of the Peruvian Amazon with engaging activities and educational opportunities at the Wildlife Explorers Basecamp.",
+    "sourceUrl": "https://sandiegozoowildlifealliance.org/pressroom/san-diego-zoo-fact-sheet",
+    "verificationSources": [
+      "https://sandiegozoowildlifealliance.org/pressroom/san-diego-zoo-fact-sheet",
+      "https://www.sandiego.com/blog/post/san-diego-with-kids-fun-things-to-do-in-2026/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "WOW Festival – La Jolla Playhouse",
+    "category": "Performance/Show",
+    "date": "2026-04-23 to 2026-04-26",
+    "time": "Various times",
+    "location": "La Jolla Playhouse, La Jolla",
+    "address": "2910 La Jolla Village Dr, La Jolla, CA 92037",
+    "ageRange": "All ages",
+    "cost": "Free",
+    "description": "Four-day festival featuring international immersive theater, dance, puppetry, art installations, and hands-on activities for children.",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2025/12/30/a-bucket-list-of-70-free-things-to-do-in-san-diego-county-in-2026/",
+    "verificationSources": [
+      "https://www.sandiegouniontribune.com/2025/12/30/a-bucket-list-of-70-free-things-to-do-in-san-diego-county-in-2026/",
+      "https://www.sandiego.org/plan-your-trip/plan-by-season/spring-break/spring-festivals"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Mission Federal ArtWalk – Little Italy",
+    "category": "Arts/Crafts",
+    "date": "2026-04-25 to 2026-04-26",
+    "time": "11:00 AM - 6:00 PM",
+    "location": "Little Italy, San Diego",
+    "address": "India Street, San Diego, CA 92101",
+    "ageRange": "All ages",
+    "cost": "Free",
+    "description": "San Diego's largest free art festival featuring fine art, live music, food, and kids art activities in the Little Italy neighborhood.",
+    "sourceUrl": "https://www.sandiegouniontribune.com/2025/12/30/a-bucket-list-of-70-free-things-to-do-in-san-diego-county-in-2026/",
+    "verificationSources": [
+      "https://www.sandiegouniontribune.com/2025/12/30/a-bucket-list-of-70-free-things-to-do-in-san-diego-county-in-2026/",
+      "https://www.sandiego.org/plan-your-trip/plan-by-season/spring-break/spring-festivals"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "San Diego Zoo – Food, Wine & Brew",
+    "category": "Nature/Outdoor",
+    "date": "2026-05-02",
+    "time": "6:00 PM - 9:00 PM",
+    "location": "San Diego Zoo, Balboa Park",
+    "address": "2920 Zoo Dr, San Diego, CA 92101",
+    "ageRange": "Ages 0-5 (with parents)",
+    "cost": "$100+",
+    "description": "Annual fundraiser with gourmet cuisine, wines and beers, wildlife encounters, and live entertainment at the zoo.",
+    "sourceUrl": "https://sandiegozoowildlifealliance.org/pressroom/san-diego-zoo-fact-sheet",
+    "verificationSources": [
+      "https://sandiegozoowildlifealliance.org/pressroom/san-diego-zoo-fact-sheet"
+    ],
+    "verification_status": "SINGLE_SOURCE"
+  },
+  {
+    "name": "Watershed Wednesdays – SD Botanic Garden",
+    "category": "Nature/Outdoor",
+    "date": "2026-05-06 to 2026-05-20",
+    "time": "9:30 AM - 12:00 PM",
+    "location": "San Diego Botanic Garden, Encinitas",
+    "address": "230 Quail Gardens Dr, Encinitas, CA 92024",
+    "ageRange": "Ages 2-5",
+    "cost": "Free with admission ($10-$18)",
+    "description": "Interactive watershed model activities where kids learn about water, rivers, and the environment through hands-on play.",
+    "sourceUrl": "https://sdbg.org/childrens-activities/",
+    "verificationSources": [
+      "https://sdbg.org/childrens-activities/"
+    ],
+    "verification_status": "SINGLE_SOURCE"
+  },
+  {
+    "name": "Nighttime Zoo – San Diego Zoo",
+    "category": "Nature/Outdoor",
+    "date": "2026-05-22 to 2026-05-31",
+    "time": "5:00 PM - 9:00 PM",
+    "location": "San Diego Zoo, Balboa Park",
+    "address": "2920 Zoo Dr, San Diego, CA 92101",
+    "ageRange": "All ages",
+    "cost": "Free with zoo admission ($62-$72)",
+    "description": "Extended evening hours with special live performances, animal encounters, and a magical nighttime atmosphere at the zoo.",
+    "sourceUrl": "https://sandiegozoowildlifealliance.org/pressroom/san-diego-zoo-fact-sheet",
+    "verificationSources": [
+      "https://sandiegozoowildlifealliance.org/pressroom/san-diego-zoo-fact-sheet",
+      "https://www.sandiego.com/blog/post/san-diego-with-kids-fun-things-to-do-in-2026/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Birch Aquarium Storytime in the Seadragon Nook",
+    "category": "Library/Storytime",
+    "date": "2026-03-28",
+    "time": "11:00 AM - 11:30 AM",
+    "location": "Birch Aquarium at Scripps, La Jolla",
+    "address": "2300 Expedition Way, La Jolla, CA 92037",
+    "ageRange": "Ages 0-5",
+    "cost": "Free with admission ($15-$25)",
+    "description": "Enchanting storybook tales about ocean creatures in the aquarium's Seadragon Nook, perfect for young ocean enthusiasts.",
+    "sourceUrl": "https://aquarium.ucsd.edu/events/all",
+    "verificationSources": [
+      "https://aquarium.ucsd.edu/events/all",
+      "https://lajollamom.com/best-things-to-do-in-san-diego-with-kids/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "Museum of Contemporary Art SD – Free Second Sunday",
+    "category": "Museum/Education",
+    "date": "2026-04-12",
+    "time": "11:00 AM - 2:00 PM",
+    "location": "Museum of Contemporary Art San Diego, La Jolla",
+    "address": "700 Prospect St, La Jolla, CA 92037",
+    "ageRange": "All ages",
+    "cost": "Free",
+    "description": "Free admission for all on Second Sundays with hands-on art activities for kids. Children 17 and under always free.",
+    "sourceUrl": "https://lajollamom.com/free-things-to-do-in-san-diego-with-kids/",
+    "verificationSources": [
+      "https://lajollamom.com/free-things-to-do-in-san-diego-with-kids/",
+      "https://www.sandiegouniontribune.com/2025/12/30/a-bucket-list-of-70-free-things-to-do-in-san-diego-county-in-2026/"
+    ],
+    "verification_status": "VERIFIED"
+  },
+  {
+    "name": "The New Children's Museum – Spring Exhibits",
+    "category": "Museum/Education",
+    "date": "2026-03-23 to 2026-05-31",
+    "time": "10:00 AM - 4:00 PM",
+    "location": "The New Children's Museum, Downtown San Diego",
+    "address": "200 W Island Ave, San Diego, CA 92101",
+    "ageRange": "Ages 0-5",
+    "cost": "$20-$24",
+    "description": "Interactive art installations, sensory experiences for toddlers, art workshops, and outdoor play spaces in downtown San Diego.",
+    "sourceUrl": "https://www.sandiego.com/blog/post/san-diego-with-kids-fun-things-to-do-in-2026/",
+    "verificationSources": [
+      "https://www.sandiego.com/blog/post/san-diego-with-kids-fun-things-to-do-in-2026/",
+      "https://lajollamom.com/best-things-to-do-in-san-diego-with-kids/"
+    ],
+    "verification_status": "VERIFIED"
+  }
+]
