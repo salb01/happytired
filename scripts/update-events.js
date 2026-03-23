@@ -56,6 +56,7 @@ Verify each event with 2+ sources when possible. Flag conflicts. Sort by date.`;
     const message = await anthropic.messages.create({
       model: 'claude-sonnet-4-20250514',
       max_tokens: 8000,
+      system: 'You are a JSON-only API. Return ONLY valid JSON arrays with no explanations, preambles, or markdown formatting. Never include any text before or after the JSON array.',
       tools: [
         {
           type: 'web_search_20250305',
@@ -70,7 +71,7 @@ Verify each event with 2+ sources when possible. Flag conflicts. Sort by date.`;
       ],
     });
 
-    // Extract JSON from response
+    // Extract JSON from response - ULTRA ROBUST VERSION
     let jsonText = '';
     for (const block of message.content) {
       if (block.type === 'text') {
@@ -78,25 +79,33 @@ Verify each event with 2+ sources when possible. Flag conflicts. Sort by date.`;
       }
     }
 
-    // Clean up the response - find the JSON array
+    console.log('Raw Claude response length:', jsonText.length);
+    
+    // Clean up the response - try multiple strategies
     jsonText = jsonText.trim();
     
-    // Remove markdown code fences if present
-    jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '');
+    // Strategy 1: Remove markdown code fences
+    jsonText = jsonText.replace(/^```json\n?/, '').replace(/\n?```$/, '').replace(/^```\n?/, '').replace(/\n?```$/, '');
     
-    // Try to extract JSON array if Claude added preamble text
-    const arrayMatch = jsonText.match(/\[\s*\{[\s\S]*\}\s*\]/);
+    // Strategy 2: Find the JSON array using regex (greedy match)
+    let arrayMatch = jsonText.match(/\[[\s\S]*\]/);
     if (arrayMatch) {
       jsonText = arrayMatch[0];
     }
     
-    // If still no valid JSON, try to find it after any preamble
-    if (!jsonText.startsWith('[')) {
-      const jsonStart = jsonText.indexOf('[');
-      if (jsonStart !== -1) {
-        jsonText = jsonText.substring(jsonStart);
-      }
+    // Strategy 3: If still has preamble, find first [ and last ]
+    const firstBracket = jsonText.indexOf('[');
+    const lastBracket = jsonText.lastIndexOf(']');
+    
+    if (firstBracket !== -1 && lastBracket !== -1 && firstBracket < lastBracket) {
+      jsonText = jsonText.substring(firstBracket, lastBracket + 1);
     }
+    
+    // Final cleanup: remove any remaining non-JSON text
+    jsonText = jsonText.trim();
+    
+    console.log('Extracted JSON length:', jsonText.length);
+    console.log('First 100 chars:', jsonText.substring(0, 100));
 
     const events = JSON.parse(jsonText);
     
